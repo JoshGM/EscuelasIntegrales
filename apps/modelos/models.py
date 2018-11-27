@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 class CentroEscolar(models.Model):
@@ -113,14 +114,10 @@ class Roles(models.Model):
         db_table = 'roles'
 
 
-class Usuario(models.Model):
-    id_usuario = models.IntegerField(primary_key=True)
+class Usuario(AbstractUser):
+    
     id_rol = models.ForeignKey(Roles, models.PROTECT, db_column='id_rol', blank=True, null=True)
-    nombre = models.CharField(max_length=100, blank=True, null=True)
-    apellido = models.CharField(max_length=100, blank=True, null=True)
     institucion = models.CharField(max_length=255, blank=True, null=True)
-    nickname = models.CharField(max_length=50, blank=True, null=True)
-    contrasenia = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
         managed = True

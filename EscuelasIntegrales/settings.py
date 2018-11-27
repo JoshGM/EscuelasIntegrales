@@ -139,7 +139,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Nuevo modelo Usuario a utilizar
-# AUTH_USER_MODEL = 'modelos.User'
+AUTH_USER_MODEL = 'modelos.Usuario'
 
 # URLS para redireccionamiento de 
 LOGIN_URL = '/users/login/'
