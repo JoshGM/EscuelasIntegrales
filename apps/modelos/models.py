@@ -76,8 +76,8 @@ class Proveedores(models.Model):
 
 
 class ProveedorProyecto(models.Model):
-    id_proyecto = models.ForeignKey('Proyectos', models.PROTECT, db_column='id_proyecto', primary_key=True)
-    id_proveedor = models.ForeignKey('Proveedores', models.PROTECT, db_column='id_proveedor')
+    id_proyecto = models.OneToOneField('Proyectos', models.PROTECT, db_column='id_proyecto', primary_key=True)
+    id_proveedor = models.OneToOneField('Proveedores', models.PROTECT, db_column='id_proveedor')
     id_estado = models.ForeignKey(EstadoProyecto, models.PROTECT, db_column='id_estado', blank=True, null=True)
     fecha_inicio = models.DateField(blank=True, null=True)
     fecha_fin = models.DateField(blank=True, null=True)
