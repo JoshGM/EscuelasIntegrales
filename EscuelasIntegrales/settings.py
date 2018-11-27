@@ -31,6 +31,10 @@ ALLOWED_HOSTS = ['*', ]
 # Application definition
 
 INSTALLED_APPS = [
+    # The general purpose templates
+    'django_adminlte',
+    # Optional: Skin for the admin interface
+    'django_adminlte_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.modelos',
     'apps.vistas',
-    
 ]
 
 MIDDLEWARE = [
